@@ -13,9 +13,6 @@ echo "--------------------------------------------------------------------------
 touch /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 nano /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 echo "Очікування завершення редагування файла"
-while pgrep -x "nano" > /dev/null; do
-    sleep 1
-done
 echo "-----------------------------------------------------------------------------"
 echo "Редагування файлу .service"
 echo "-----------------------------------------------------------------------------"
