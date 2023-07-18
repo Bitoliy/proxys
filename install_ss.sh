@@ -16,18 +16,19 @@ echo "--------------------------------------------------------------------------
 echo "Редагування файлу .service:"
 echo "-----------------------------------------------------------------------------"
 SERVICE_FILE="/etc/systemd/system/shadowsocks-libev-server@.service"
-echo "[Unit]" > "$SERVICE_FILE"
-echo "Description=Shadowsocks-Libev Custom Server Service for %I" >> "$SERVICE_FILE"
-echo "Documentation=man:ss-server(1)" >> "$SERVICE_FILE"
-echo "After=network-online.target" >> "$SERVICE_FILE"
-echo "" >> "$SERVICE_FILE"
-echo "[Service]" >> "$SERVICE_FILE"
-echo "Type=simple" >> "$SERVICE_FILE"
-echo "ExecStart=/usr/bin/snap run shadowsocks-libev.ss-server -c /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/%i.json" >> "$SERVICE_FILE"
-echo "" >> "$SERVICE_FILE"
-echo "[Install]" >> "$SERVICE_FILE"
-echo "WantedBy=multi-user.target" >> "$SERVICE_FILE"
-nano "$SERVICE_FILE"
+echo "[Unit]
+Description=Shadowsocks-Libev Custom Server Service for %I
+Documentation=man:ss-server(1)
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/snap run shadowsocks-libev.ss-server -c /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/%i.json
+
+[Install]
+WantedBy=multi-user.target" | sudo tee "$SERVICE_FILE"
+
+sudo nano "$SERVICE_FILE"
 echo "-----------------------------------------------------------------------------"
 echo "Активація та перевірка статусу shadowsocks-libev сервісу"
 echo "-----------------------------------------------------------------------------"
