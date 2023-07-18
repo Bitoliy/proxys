@@ -3,8 +3,6 @@
 # Оновлення та установка необхідних пакетів
 apt update && apt upgrade -y
 apt install -y snapd
-reboot
-
 # Після перезавантаження
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
