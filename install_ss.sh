@@ -10,6 +10,9 @@ sudo snap install shadowsocks-libev
 echo "-----------------------------------------------------------------------------"
 echo "Редагування файлу конфігурації shadowsocks-libev"
 echo "-----------------------------------------------------------------------------"
+while pgrep -x "nano" > /dev/null; do
+    sleep 1
+done
 touch /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 nano /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 echo "-----------------------------------------------------------------------------"
