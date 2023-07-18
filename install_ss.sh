@@ -32,10 +32,7 @@ echo "" >> "$SERVICE_FILE"
 echo "[Install]" >> "$SERVICE_FILE"
 echo "WantedBy=multi-user.target" >> "$SERVICE_FILE"
 nano "$SERVICE_FILE"
-echo "Очікування завершення редагування файла"
-while pgrep -x "nano" > /dev/null; do
-    sleep 1
-done
+
 echo "-----------------------------------------------------------------------------"
 echo "Активація та перевірка статусу shadowsocks-libev сервісу"
 echo "-----------------------------------------------------------------------------"
