@@ -23,8 +23,5 @@ nano docker-compose.yml
 # Запуск контейнера
 docker-compose up -d
 
-# Відображення журналу контейнера
-docker logs -ft proxy
-
 # Перезавантаження сервера
 reboot
