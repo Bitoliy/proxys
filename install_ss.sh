@@ -7,11 +7,13 @@ sudo apt install -y snapd
 sudo ufw allow 8388/udp
 sudo ufw allow 8388/tcp
 sudo snap install shadowsocks-libev
+
 echo "-----------------------------------------------------------------------------"
 echo "Редагування файлу конфігурації shadowsocks-libev"
 echo "-----------------------------------------------------------------------------"
 touch /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 nano /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
+
 echo "Очікування завершення редагування файла"
 echo "-----------------------------------------------------------------------------"
 echo "Редагування файлу .service"
@@ -46,10 +48,7 @@ echo "Редагування файла /etc/hosts"
 echo "-----------------------------------------------------------------------------"
 # Редагування файла /etc/hosts
 nano /etc/hosts
-echo "Очікування завершення редагування файла"
-while pgrep -x "nano" > /dev/null; do
-    sleep 1
-done
+
 echo "-----------------------------------------------------------------------------"
 echo "Вимкнення фаєрволу"
 echo "-----------------------------------------------------------------------------"
